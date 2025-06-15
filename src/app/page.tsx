@@ -8,7 +8,6 @@ import {
   Integrations,
   Pricing,
   Testimonials,
-  CTA,
   Footer
 } from '@/components';
 
@@ -18,11 +17,10 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <Features />
         <Integrations />
+        <Features />
         <Pricing />
         <Testimonials />
-        <CTA />
       </main>
       <Footer />
     </div>

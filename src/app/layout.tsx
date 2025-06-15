@@ -26,7 +26,27 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        style={{
+          minHeight: "100vh",
+          background: "none",
+          position: "relative",
+        }}
       >
+        <div
+          style={{
+            position: "fixed",
+            zIndex: -1,
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            backgroundImage: "url('/route-bg.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            opacity: 1,
+          }}
+        />
         {children}
       </body>
     </html>
