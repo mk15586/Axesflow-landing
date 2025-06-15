@@ -14,9 +14,8 @@ const navLinks = [
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [shrinkProgress, setShrinkProgress] = useState(0);
   const scrollYRef = useRef(0);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | null>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
@@ -25,7 +24,6 @@ const Header: React.FC = () => {
       const y = scrollYRef.current;
       // Start animation 100px earlier (at y = 100)
       const progress = Math.min(Math.max((y - 100) / 100, 0), 1);
-      setShrinkProgress(progress);
       if (headerRef.current) {
         const width = 110 - 15 * progress;
         const borderRadius = 2.5 - 1.25 * progress;

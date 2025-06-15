@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 
 interface TestimonialProps {
   quote: string;
@@ -68,7 +67,7 @@ const Testimonials: React.FC = () => {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Trusted by Innovators Worldwide</h2>
           <p className="text-xl text-gray-600">What Our Users Say</p>
-          <p className="text-lg text-gray-600">Hear from businesses who've transformed their workflows with our solutions</p>
+          <p className="text-lg text-gray-600">Hear from businesses who&apos;ve transformed their workflows with our solutions</p>
         </motion.div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
