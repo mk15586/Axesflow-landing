@@ -1,57 +1,39 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const Integrations: React.FC = () => {
-  // Placeholder for integration logos
-  const integrations = [
-    { name: 'Slack', logo: '/images/integrations/slack-placeholder.svg' },
-    { name: 'Google', logo: '/images/integrations/google-placeholder.svg' },
-    { name: 'Microsoft', logo: '/images/integrations/microsoft-placeholder.svg' },
-    { name: 'Salesforce', logo: '/images/integrations/salesforce-placeholder.svg' },
-    { name: 'Hubspot', logo: '/images/integrations/hubspot-placeholder.svg' },
-    { name: 'Zapier', logo: '/images/integrations/zapier-placeholder.svg' },
-  ];
-
   return (
-    <section id="integrations" className="py-20">
-      <div className="container mx-auto px-4">
+    <section id="integrations" className="py-20 flex justify-center">
+      <div className="w-full max-w-6xl bg-[#D8DFE5] rounded-2xl p-10 md:p-16 shadow-2xl">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Integrations</h2>
-          <p className="text-xl text-gray-600 mb-2">Integrates with</p>
-          <p className="text-lg text-gray-600">Seamlessly integrate with your favorite tools</p>
+          <div className="flex items-center justify-center w-30 h-12 rounded-4xl bg-white mb-4 shadow-md border-2 border-[#dfe3e7] relative">
+            <div className="absolute inset-0 rounded-4xl border-1 border-[#adb1b4] pointer-events-none" style={{ zIndex: 1 }}></div>
+            <Image src="/integration.png" alt="Integrations" width={180} height={48} className="mx-auto relative z-10" />
+          </div>
+          <p className="text-2xl md:text-6xl text-black mb-2 font-['Plus Jakarta Sans']">Integrates with</p>
+          <p className="text-lg text-black">Seamlessly integrate with your favorite tools</p>
         </motion.div>
-        
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-          {integrations.map((integration, index) => (
-            <motion.div
-              key={integration.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
-              className="flex flex-col items-center"
-            >
-              {/* Placeholder for actual logos */}
-              <div className="w-16 h-16 bg-gray-200 rounded-lg mb-3 flex items-center justify-center">
-                {/* When you have actual logos, use this: */}
-                {/* <Image 
-                  src={integration.logo} 
-                  alt={`${integration.name} logo`} 
-                  width={48} 
-                  height={48} 
-                /> */}
-                <span className="text-gray-400 text-xs">{integration.name[0]}</span>
-              </div>
-              <p className="text-sm text-gray-600">{integration.name}</p>
-            </motion.div>
-          ))}
+        <div className="flex justify-center">
+          <Image src="/panel.png" alt="Panel" width={1000} height={300} className="rounded-xl s" />
+        </div>
+        <div className="flex flex-col md:flex-row justify-center gap-6 mt-10">
+          <div className="flex items-center gap-3 border border-[#D8DFE5] rounded-xl px-6 py-4 min-w-[120px] bg-transparent">
+            <Image src="/seamless-automation.png" alt="Seamless Automation" width={250} height={250} />
+          </div>
+          <div className="flex items-center gap-3 border border-[#D8DFE5] rounded-xl px-6 py-4 min-w-[120px] bg-transparent">
+            <Image src="/data-sync.png" alt="Real-Time Data Sync" width={200} height={200} />
+          </div>
+          <div className="flex items-center gap-3 border border-[#D8DFE5] rounded-xl px-6 py-4 min-w-[120px] bg-transparent ">
+            <Image src="/customize-solution.png" alt="Customizable Solutions" width={250} height={250} />
+          </div>
         </div>
       </div>
     </section>

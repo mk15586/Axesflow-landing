@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend
 } from 'recharts';
@@ -143,10 +144,9 @@ const Hero: React.FC = () => {
           </motion.p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/signup" passHref>
-              <motion.a
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.98 }}
+            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
+              <Link
+                href="/signup"
                 className="px-6 py-3 text-white rounded-[10px] flex items-center gap-2 text-lg font-medium"
                 style={{
                   background: 'linear-gradient(125deg, #774be5 -4%, #774be5 100%)',
@@ -155,13 +155,11 @@ const Hero: React.FC = () => {
               >
                 Get Started
                 <ArrowIcon />
-              </motion.a>
-            </Link>
-            
-            <Link href="#features" passHref>
-              <motion.a
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.98 }}
+              </Link>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
+              <Link
+                href="#features"
                 className="px-6 py-3 text-white rounded-[10px] flex items-center gap-2 text-lg font-medium"
                 style={{
                   background: 'linear-gradient(127deg, #0e1c29 -68%, #323d68 100%)',
@@ -170,8 +168,8 @@ const Hero: React.FC = () => {
               >
                 Learn More
                 <InfoIcon />
-              </motion.a>
-            </Link>
+              </Link>
+            </motion.div>
           </div>
         </motion.div>
 
@@ -378,16 +376,22 @@ const Hero: React.FC = () => {
         </div>
 
         <motion.div 
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-20 text-center"
+          className="mt-10 text-center"
         >
-          <p className="text-gray-500 mb-6">Adopted by renowned, trusted, and leading enterprises</p>
-          <div className="flex flex-wrap justify-center gap-8 md:gap-16">
-            {[1, 2, 3, 4, 5].map((i) => (
-              <div key={i} className="h-8 w-24 bg-gray-200 rounded-md opacity-60"></div>
-            ))}
+          <div className="flex items-center justify-center mb-4 w-full">
+            <div className="hidden md:block flex-1 border-t-3 border-dotted border-gray-400 mr-4" style={{ opacity: 0.3 }} />
+            <p className="text-gray-500 text-lg font-medium whitespace-nowrap">Adopted by renowned, trusted, and leading enterprises</p>
+            <div className="hidden md:block flex-1 border-t-3 border-dotted border-gray-400 ml-4" style={{ opacity: 0.3 }} />
+          </div>
+          <div className="flex flex-wrap justify-center gap-8 md:gap-16 items-center -mt-4">
+            <Image src="/asterisk.png" alt="Asterisk" width={110} height={44} className="object-contain grayscale" />
+            <Image src="/Oasis.png" alt="Oasis" width={110} height={44} className="object-contain grayscale" />
+            <Image src="/eooks.png" alt="Eooks" width={110} height={44} className="object-contain grayscale" />
+            <Image src="/opal.png" alt="Opal" width={110} height={44} className="object-contain grayscale" />
+            <Image src="/dune.png" alt="Dune" width={110} height={44} className="object-contain grayscale" />
           </div>
         </motion.div>
       </div>
