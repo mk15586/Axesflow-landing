@@ -40,7 +40,7 @@ export default function RootLayout({
             left: 0,
             width: "100vw",
             height: "100vh",
-            backgroundImage: "url('/route-bg.png')",
+  
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",

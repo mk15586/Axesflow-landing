@@ -8,8 +8,9 @@ import {
   Integrations,
   Pricing,
   Testimonials,
-  Footer
+  Footer,
 } from '@/components';
+import Insight from '@/components/insight';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <main>
         <Hero />
         <Integrations />
+        <Insight />
         <Features />
         <Pricing />
         <Testimonials />

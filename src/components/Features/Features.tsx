@@ -62,8 +62,8 @@ const Features: React.FC = () => {
   ];
 
   return (
-    <section id="features" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <section id="features" className="py-20">
+      <div className="mx-auto max-w-6xl rounded-2xl p-10 md:p-16 shadow-2xl" style={{ background: 'linear-gradient(135deg, #f3f4f6, #e5e7eb)' }}>
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -71,7 +71,7 @@ const Features: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">AI-Powered Marketing</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">AI-Powered Marketing</h2>
           <p className="text-xl text-gray-600">Simplify deployment for unmatched scalability and impact</p>
         </motion.div>
         

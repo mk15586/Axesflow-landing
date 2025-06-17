@@ -42,6 +42,23 @@ const Header: React.FC = () => {
       scrollYRef.current = window.scrollY;
     };
 
+    // --- Fix: Initialize header style immediately on mount ---
+    scrollYRef.current = window.scrollY;
+    if (headerRef.current) {
+      const y = scrollYRef.current;
+      const progress = Math.min(Math.max((y - 100) / 100, 0), 1);
+      const width = 110 - 15 * progress;
+      const borderRadius = 2.5 - 1.25 * progress;
+      const bgOpacity = progress * 0.8;
+      const maxWidth = 1200 - 300 * progress;
+      headerRef.current.style.width = `${width}vw`;
+      headerRef.current.style.borderRadius = `${borderRadius}rem`;
+      headerRef.current.style.backgroundColor = `rgba(255,255,255,${bgOpacity})`;
+      headerRef.current.style.maxWidth = `${maxWidth}px`;
+      headerRef.current.style.boxShadow = progress > 0 ? '0 4px 30px rgba(0, 0, 0, 0.1)' : 'none';
+    }
+    // --- End fix ---
+
     animationRef.current = requestAnimationFrame(updateShrinkProgress);
     window.addEventListener('scroll', handleScroll, { passive: true });
 
