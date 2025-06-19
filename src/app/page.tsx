@@ -11,6 +11,7 @@ import {
   Footer,
 } from '@/components';
 import Insight from '@/components/insight';
+import { Qna } from '@/components/qna';
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <Insight />
         <Features />
         <Pricing />
+        <Qna />
         {/* <Testimonials /> */}
       </main>
       <Footer />
