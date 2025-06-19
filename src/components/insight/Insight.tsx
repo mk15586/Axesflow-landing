@@ -40,11 +40,15 @@ const Insight: React.FC = () => {
             color: '#222',
             boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
             position: 'relative',
-            outline: '4px solid #e0e7ef',
+            outline: '4px double #e0e7ef', // changed to double border
             outlineOffset: '-6px',
             zIndex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            gap: 8,
           }}
         >
+          <img src="/magnifying-glass.svg" alt="Live Oversight" style={{ width: 16, height: 16, marginRight: 8 }} />
           Live Oversight
         </button>
       </div>

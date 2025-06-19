@@ -2,11 +2,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import SocialLinksDiagram from './SocialLinksDiagram';
 
 const Integrations: React.FC = () => {
   return (
-    <section id="integrations" className="py-20 flex justify-center">
-      <div className="w-full max-w-6xl bg-[#D8DFE5] rounded-2xl p-10 md:p-16 shadow-2xl">
+    <section id="integrations" className="py-10 flex justify-center">
+      <div className="w-full max-w-6xl bg-[#D8DFE5] rounded-2xl p-6 md:p-10 shadow-2xl">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -22,7 +23,7 @@ const Integrations: React.FC = () => {
           <p className="text-lg text-black">Seamlessly integrate with your favorite tools</p>
         </motion.div>
         <div className="flex justify-center">
-          <Image src="/panel.png" alt="Panel" width={1000} height={300} className="rounded-xl s" />
+          <SocialLinksDiagram />
         </div>
         <div className="flex flex-col md:flex-row justify-center gap-6 mt-10">
           <div className="flex items-center gap-3 border border-[#D8DFE5] rounded-xl px-6 py-4 min-w-[120px] bg-transparent">

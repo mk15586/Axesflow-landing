@@ -22,8 +22,8 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, del
       style={{ minHeight: '260px' }}
     >
       <div className="flex items-center mb-6">
-        <div className="bg-white rounded-xl shadow-md p-3 mr-4 flex items-center justify-center" style={{ boxShadow: '0 4px 16px 0 rgba(16,30,54,0.10)' }}>
-          <span className="text-[#8B5CF6] text-3xl">{icon}</span>
+        <div className="bg-white rounded-xl shadow-md p-5 mr-4 flex items-center justify-center" style={{ boxShadow: '0 4px 16px 0 rgba(16,30,54,0.10)' }}>
+          <span className="text-[#8B5CF6] text-5xl">{icon}</span>
         </div>
         <h3 className="text-2xl  text-gray-900" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>{title}</h3>
       </div>
@@ -99,28 +99,28 @@ const Features: React.FC = () => {
           </div>
           <div className="w-full flex justify-center items-center gap-8 mt-12">
             <div className="flex items-center w-full max-w-xs">
-              <div className="flex-1 h-px border-t border-dotted border-gray-400 opacity-60"></div>
+              <div className="flex-1 h-3 border-t-3 border-dotted border-gray-400 opacity-60"></div>
               <div className="flex items-center gap-2 px-4">
                 <img src="/reshot-icon-handshake-FWPX82A9T3.svg" alt="Expert Collaboration" className="w-8 h-8" />
                 <span className="text-lg font-medium text-gray-800">Expert Collaboration</span>
               </div>
-              <div className="flex-1 h-px border-t border-dotted border-gray-400 opacity-60"></div>
+              <div className="flex-1 h-3 border-t-3 border-dotted border-gray-400 opacity-60"></div>
             </div>
             <div className="flex items-center w-full max-w-xs">
-              <div className="flex-1 h-px border-t border-dotted border-gray-400 opacity-60"></div>
+              <div className="flex-1 h-3 border-t-3 border-dotted border-gray-400 opacity-60"></div>
               <div className="flex items-center gap-2 px-4">
                 <img src="/plug.svg" alt="Seamless Integration" className="w-8 h-8" />
                 <span className="text-lg font-medium text-gray-800">Seamless Integration</span>
               </div>
-              <div className="flex-1 h-px border-t border-dotted border-gray-400 opacity-60"></div>
+              <div className="flex-1 h-3 border-t-3 border-dotted border-gray-400 opacity-60"></div>
             </div>
             <div className="flex items-center w-full max-w-xs">
-              <div className="flex-1 h-px border-t border-dotted border-gray-400 opacity-60"></div>
+              <div className="flex-1 h-3 border-t-3 border-dotted border-gray-400 opacity-60"></div>
               <div className="flex items-center gap-2 px-4">
                 <img src="/stat.svg" alt="Scalable Solutions" className="w-8 h-8" />
                 <span className="text-lg font-medium text-gray-800">Scalable Solutions</span>
               </div>
-              <div className="flex-1 h-px border-t border-dotted border-gray-400 opacity-60"></div>
+              <div className="flex-1 h-3 border-t-3 border-dotted border-gray-400 opacity-60"></div>
             </div>
           </div>
         </div>
