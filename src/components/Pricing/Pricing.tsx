@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiCheck } from 'react-icons/fi';
-import Link from 'next/link';
 
 const plans = [
   	{
