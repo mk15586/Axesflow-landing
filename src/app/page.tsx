@@ -7,7 +7,7 @@ import {
   Features,
   Integrations,
   Pricing,
-  Testimonials,
+  // Testimonials,
   Footer,
 } from '@/components';
 import Insight from '@/components/insight';
