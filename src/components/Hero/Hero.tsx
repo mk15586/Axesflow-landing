@@ -446,20 +446,20 @@ const Hero: React.FC = () => {
             <p className="text-gray-500 text-sm md:text-lg font-medium whitespace-nowrap">Adopted by renowned, trusted, and leading enterprises</p>
             <div className="hidden md:block flex-1 border-t-3 border-dotted border-gray-400 ml-4" style={{ opacity: 0.3 }} />
           </div>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-16 items-center">
-            <div className="w-20 md:w-28 h-10 md:h-12 relative">
+          <div className="flex flex-wrap justify-center gap-6 md:gap-12 lg:gap-20 items-center">
+            <div className="w-32 md:w-48 h-16 md:h-24 relative">
               <Image src="/asterisk.png" alt="Asterisk" fill className="object-contain grayscale opacity-80 hover:opacity-100 transition-opacity" />
             </div>
-            <div className="w-20 md:w-28 h-10 md:h-12 relative">
+            <div className="w-32 md:w-48 h-16 md:h-24 relative">
               <Image src="/Oasis.png" alt="Oasis" fill className="object-contain grayscale opacity-80 hover:opacity-100 transition-opacity" />
             </div>
-            <div className="w-20 md:w-28 h-10 md:h-12 relative">
+            <div className="w-32 md:w-48 h-16 md:h-24 relative">
               <Image src="/eooks.png" alt="Eooks" fill className="object-contain grayscale opacity-80 hover:opacity-100 transition-opacity" />
             </div>
-            <div className="w-20 md:w-28 h-10 md:h-12 relative">
+            <div className="w-32 md:w-48 h-16 md:h-24 relative">
               <Image src="/opal.png" alt="Opal" fill className="object-contain grayscale opacity-80 hover:opacity-100 transition-opacity" />
             </div>
-            <div className="w-20 md:w-28 h-10 md:h-12 relative">
+            <div className="w-32 md:w-48 h-16 md:h-24 relative">
               <Image src="/dune.png" alt="Dune" fill className="object-contain grayscale opacity-80 hover:opacity-100 transition-opacity" />
             </div>
           </div>

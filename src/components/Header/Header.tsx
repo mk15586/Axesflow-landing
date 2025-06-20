@@ -2,8 +2,6 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { FiMenu, FiX } from 'react-icons/fi';
-import { FaRocket } from 'react-icons/fa';
 
 const navLinks = [
   { href: '#features', label: 'Features' },
@@ -13,7 +11,6 @@ const navLinks = [
 ];
 
 const Header: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isHeadbarOpen, setIsHeadbarOpen] = useState(false);
   const scrollYRef = useRef(0);
   const animationRef = useRef<number | null>(null);
@@ -73,7 +70,7 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     if (mobileMenuRef.current) {
-      if (isMenuOpen) {
+      if (isHeadbarOpen) {
         mobileMenuRef.current.style.display = 'block';
         // Trigger reflow to reset animation
         void mobileMenuRef.current.offsetHeight;
@@ -84,14 +81,14 @@ const Header: React.FC = () => {
         mobileMenuRef.current.style.height = '0';
         // Set display none after animation completes
         const timer = setTimeout(() => {
-          if (mobileMenuRef.current && !isMenuOpen) {
+          if (mobileMenuRef.current && !isHeadbarOpen) {
             mobileMenuRef.current.style.display = 'none';
           }
         }, 500); // Match this with your transition duration
         return () => clearTimeout(timer);
       }
     }
-  }, [isMenuOpen]);
+  }, [isHeadbarOpen]);
 
   return (
     <>

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { FiTwitter, FiInstagram, FiLinkedin, FiFacebook } from 'react-icons/fi';
+import { FiTwitter, FiInstagram, FiLinkedin } from 'react-icons/fi';
 
 const Footer: React.FC = () => {
   return (
