@@ -26,9 +26,9 @@ const rightLabels = [
 
 const Insight: React.FC = () => {
   return (
-    <div style={{ maxWidth: 1400, margin: '0 auto' }}>
+    <div className="max-w-[1400px] mx-auto px-2 sm:px-4 md:px-8">
       {/* Live Oversight Button */}
-      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 24, }}>
+      <div className="flex justify-center mb-6">
         <button
           style={{
             border: '2px solid #e0e7ef',
@@ -40,7 +40,7 @@ const Insight: React.FC = () => {
             color: '#222',
             boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
             position: 'relative',
-            outline: '4px double #e0e7ef', // changed to double border
+            outline: '4px double #e0e7ef',
             outlineOffset: '-6px',
             zIndex: 1,
             display: 'flex',
@@ -54,65 +54,56 @@ const Insight: React.FC = () => {
       </div>
       {/* Heading */}
       <h2
+        className="font-['Plus Jakarta Sans',sans-serif] font-light text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-center mx-auto"
         style={{
-          fontFamily: 'Plus Jakarta Sans, sans-serif',
-          fontWeight: 300,
-          fontSize: 52.8,
-          lineHeight: '64px',
           color: '#18181b',
-          textAlign: 'center',
-          width: 900, // increased from 640
-          margin: '0 auto',
+          lineHeight: '1.2',
+          maxWidth: 900,
         }}
       >
         Comprehensive Insights
       </h2>
       {/* Subheading */}
       <p
+        className="text-base sm:text-lg text-center mx-auto mt-4 mb-10"
         style={{
-          fontFamily: 'sans-serif',
           color: '#18181b',
-          textAlign: 'center',
-          fontSize: 18,
-          margin: '16px auto 40px',
-          width: 900, // increased from 640
+          maxWidth: 900,
         }}
       >
         Track every campaign and customer interaction to refine engagement strategies
       </p>
       {/* Chart Containers */}
-      <div style={{ display: 'flex', justifyContent: 'center', gap: 48, marginBottom: 48 }}>
+      <div className="flex flex-col lg:flex-row justify-center gap-6 lg:gap-12 mb-12">
         {/* Real-Time Insights Card */}
-        <div style={{ background: '#fff', borderRadius: 16, boxShadow: '0 4px 24px rgba(0,0,0,0.08)', padding: 40, width: 540, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <div style={{ boxShadow: '0 8px 32px rgba(99,102,241,0.15)', borderRadius: 16, marginBottom: 40, background: '#fff' }}>
-            <Image src="/charts/real-time-insight.png" alt="Real-Time Insight Chart" width={520} height={260} style={{ borderRadius: 16, display: 'block', objectFit: 'cover' }} />
+        <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-8 flex-1 flex flex-col items-center mb-6 lg:mb-0 max-w-full lg:max-w-[540px]">
+          <div className="shadow-lg rounded-2xl mb-6 bg-white w-full">
+            <Image src="/charts/real-time-insight.png" alt="Real-Time Insight Chart" width={520} height={260} className="rounded-2xl w-full h-auto object-cover" />
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', marginBottom: 8, width: '100%' }}>
-            {/* Stats Icon */}
-            <svg width="28" height="28" fill="none" viewBox="0 0 28 28" style={{ marginRight: 8 }}>
+          <div className="flex items-center w-full mb-2">
+            <svg width="28" height="28" fill="none" viewBox="0 0 28 28" className="mr-2">
               <path d="M4 20l5-6 5 4 6-8 4 6" stroke="#6366f1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-            <h4 style={{ fontFamily: 'Inter, sans-serif', fontWeight: 700, fontSize: 20, margin: 0, color: '#18181b' }}>Real-Time Insights</h4>
+            <h4 className="font-['Inter',sans-serif] font-bold text-base sm:text-lg md:text-xl m-0 text-[#18181b]">Real-Time Insights</h4>
           </div>
-          <p style={{ fontFamily: 'Inter, sans-serif', color: '#52525b', fontSize: 16, textAlign: 'left', margin: 0 }}>
+          <p className="font-['Inter',sans-serif] text-xs sm:text-sm md:text-base text-[#52525b] text-left w-full m-0">
             Monitor your campaigns in real time to ensure maximum effectiveness and identify areas for improvement
           </p>
         </div>
         {/* Actionable Data Card */}
-        <div style={{ background: '#fff', borderRadius: 16, boxShadow: '0 4px 24px rgba(0,0,0,0.08)', padding: 40, width: 540, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <div style={{ boxShadow: '0 8px 32px rgba(162,28,175,0.15)', borderRadius: 16, marginBottom: 40, background: '#fff' }}>
-            <Image src="/charts/actionable-data.png" alt="Actionable Data Chart" width={520} height={260} style={{ borderRadius: 16, display: 'block', objectFit: 'cover' }} />
+        <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-8 flex-1 flex flex-col items-center max-w-full lg:max-w-[540px]">
+          <div className="shadow-lg rounded-2xl mb-6 bg-white w-full">
+            <Image src="/charts/actionable-data.png" alt="Actionable Data Chart" width={520} height={260} className="rounded-2xl w-full h-auto object-cover" />
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', marginBottom: 8, width: '100%' }}>
-            {/* Bar Graph Icon */}
-            <svg width="28" height="28" fill="none" viewBox="0 0 28 28" style={{ marginRight: 8 }}>
+          <div className="flex items-center w-full mb-2">
+            <svg width="28" height="28" fill="none" viewBox="0 0 28 28" className="mr-2">
               <rect x="4" y="16" width="4" height="8" rx="2" fill="#a21caf"/>
               <rect x="12" y="10" width="4" height="14" rx="2" fill="#a21caf"/>
               <rect x="20" y="6" width="4" height="18" rx="2" fill="#a21caf"/>
             </svg>
-            <h4 style={{ fontFamily: 'Inter, sans-serif', fontWeight: 700, fontSize: 20, margin: 0, color: '#18181b' }}>Actionable Data</h4>
+            <h4 className="font-['Inter',sans-serif] font-bold text-base sm:text-lg md:text-xl m-0 text-[#18181b]">Actionable Data</h4>
           </div>
-          <p style={{ fontFamily: 'Inter, sans-serif', color: '#52525b', fontSize: 16, textAlign: 'left', margin: 0 }}>
+          <p className="font-['Inter',sans-serif] text-xs sm:text-sm md:text-base text-[#52525b] text-left w-full m-0">
             Leverage analytics to enhance workflows, boost engagement, and make informed marketing decisions
           </p>
         </div>
@@ -121,34 +112,18 @@ const Insight: React.FC = () => {
       <div className="wrapper">
         {leftLabels.map((label, idx) => (
           <div className={`itemLeft item${idx + 1}`} key={idx}>
-            <span style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              height: '100%',
-              color: 'black',
-              fontWeight: 200,
-              fontSize: 14,
-              letterSpacing: 0.5,
-              fontFamily: 'Inter, sans-serif',
-            }}>{label}</span>
+            <span className="flex items-center justify-center h-full text-black font-extralight text-xs sm:text-sm md:text-base tracking-wide font-['Inter',sans-serif]">
+              {label}
+            </span>
           </div>
         ))}
       </div>
-      <div className="wrapper" style={{ marginTop: -16 }}>
+      <div className="wrapper mt-[-12px] sm:mt-[-16px]">
         {rightLabels.map((label, idx) => (
           <div className={`itemRight item${idx + 1}`} key={idx}>
-            <span style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              height: '100%',
-              color: 'black',
-              fontWeight: 200,
-              fontSize: 14,
-              letterSpacing: 0.5,
-              fontFamily: 'Inter, sans-serif',
-            }}>{label}</span>
+            <span className="flex items-center justify-center h-full text-black font-extralight text-xs sm:text-sm md:text-base tracking-wide font-['Inter',sans-serif]">
+              {label}
+            </span>
           </div>
         ))}
       </div>

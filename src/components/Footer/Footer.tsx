@@ -6,67 +6,41 @@ import { FiTwitter, FiInstagram, FiLinkedin, FiFacebook } from 'react-icons/fi';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-50 py-16">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-          <div>
-            <h3 className="text-xl font-bold mb-4">Alter</h3>
-            <p className="text-gray-600 mb-4">
-              AI-powered marketing automation for modern businesses.
-            </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-500 hover:text-gray-800 transition-colors">
-                <FiTwitter size={20} />
-              </a>
-              <a href="#" className="text-gray-500 hover:text-gray-800 transition-colors">
-                <FiInstagram size={20} />
-              </a>
-              <a href="#" className="text-gray-500 hover:text-gray-800 transition-colors">
-                <FiLinkedin size={20} />
-              </a>
-              <a href="#" className="text-gray-500 hover:text-gray-800 transition-colors">
-                <FiFacebook size={20} />
-              </a>
-            </div>
+    <footer className="py-8 sm:py-12 w-full" style={{ background: 'none' }}>
+      <div className="max-w-7xl mx-auto px-3 sm:px-6">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8 gap-6 sm:gap-8">
+          <div className="flex flex-col gap-3 sm:gap-4 items-center md:items-start">
+            <img src="/logo.png" alt="Alter Logo" className="h-12 sm:h-16 w-auto" />
           </div>
-          
-          <div>
-            <h4 className="font-bold mb-4">Product</h4>
-            <ul className="space-y-2">
-              <li><Link href="#features" className="text-gray-600 hover:text-gray-800 transition-colors">Features</Link></li>
-              <li><Link href="#integrations" className="text-gray-600 hover:text-gray-800 transition-colors">Integrations</Link></li>
-              <li><Link href="#pricing" className="text-gray-600 hover:text-gray-800 transition-colors">Pricing</Link></li>
-              <li><Link href="#" className="text-gray-600 hover:text-gray-800 transition-colors">Roadmap</Link></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="font-bold mb-4">Resources</h4>
-            <ul className="space-y-2">
-              <li><Link href="#" className="text-gray-600 hover:text-gray-800 transition-colors">Documentation</Link></li>
-              <li><Link href="#" className="text-gray-600 hover:text-gray-800 transition-colors">Blog</Link></li>
-              <li><Link href="#" className="text-gray-600 hover:text-gray-800 transition-colors">Guides</Link></li>
-              <li><Link href="#" className="text-gray-600 hover:text-gray-800 transition-colors">Support</Link></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="font-bold mb-4">Company</h4>
-            <ul className="space-y-2">
-              <li><Link href="#" className="text-gray-600 hover:text-gray-800 transition-colors">About</Link></li>
-              <li><Link href="#" className="text-gray-600 hover:text-gray-800 transition-colors">Careers</Link></li>
-              <li><Link href="#" className="text-gray-600 hover:text-gray-800 transition-colors">Contact</Link></li>
-              <li><Link href="#" className="text-gray-600 hover:text-gray-800 transition-colors">Press</Link></li>
-            </ul>
+          <nav className="flex flex-wrap justify-center gap-4 sm:gap-8 text-base sm:text-lg font-normal text-[#5a6473]">
+            <Link href="#features" className="hover:text-[#25324B] transition-colors opacity-70">Features</Link>
+            <Link href="/changelog" className="hover:text-[#25324B] transition-colors opacity-70">Changelog</Link>
+            <Link href="#pricing" className="hover:text-[#25324B] transition-colors opacity-70">Pricing</Link>
+            <Link href="/contact" className="hover:text-[#25324B] transition-colors opacity-70">Contact</Link>
+          </nav>
+          <div className="flex items-center justify-center gap-3 sm:gap-4">
+            <a aria-label="Instagram" href="https://instagram.com" target="_blank" rel="noopener" className="text-[#0e1c29] hover:text-[#25324B] transition-colors opacity-60">
+              <FiInstagram size={22} />
+            </a>
+            <a aria-label="LinkedIn" href="https://linkedin.com" target="_blank" rel="noopener" className="text-[#0e1c29] hover:text-[#25324B] transition-colors opacity-60">
+              <FiLinkedin size={22} />
+            </a>
+            <a aria-label="Youtube" href="https://youtube.com" target="_blank" rel="noopener" className="text-[#0e1c29] hover:text-[#25324B] transition-colors opacity-60">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="22" height="22" fill="currentColor">
+                <path d="M164.44,121.34l-48-32A8,8,0,0,0,104,96v64a8,8,0,0,0,12.44,6.66l48-32a8,8,0,0,0,0-13.32ZM120,145.05V111l25.58,17ZM234.33,69.52a24,24,0,0,0-14.49-16.4C185.56,39.88,131,40,128,40s-57.56-.12-91.84,13.12a24,24,0,0,0-14.49,16.4C19.08,79.5,16,97.74,16,128s3.08,48.5,5.67,58.48a24,24,0,0,0,14.49,16.41C69,215.56,120.4,216,127.34,216h1.32c6.94,0,58.37-.44,91.18-13.11a24,24,0,0,0,14.49-16.41c2.59-10,5.67-28.22,5.67-58.48S236.92,79.5,234.33,69.52Zm-15.49,113a8,8,0,0,1-4.77,5.49c-31.65,12.22-85.48,12-86,12H128c-.54,0-54.33.2-86-12a8,8,0,0,1-4.77-5.49C34.8,173.39,32,156.57,32,128s2.8-45.39,5.16-54.47A8,8,0,0,1,41.93,68c30.52-11.79,81.66-12,85.85-12h.27c.54,0,54.38-.18,86,12a8,8,0,0,1,4.77,5.49C221.2,82.61,224,99.43,224,128S221.2,173.39,218.84,182.47Z"/>
+              </svg>
+            </a>
+            <a aria-label="Twitter" href="https://twitter.com" target="_blank" rel="noopener" className="text-[#0e1c29] hover:text-[#25324B] transition-colors opacity-60">
+              <FiTwitter size={22} />
+            </a>
           </div>
         </div>
-        
-        <div className="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-600 mb-4 md:mb-0">&copy; {new Date().getFullYear()} Alter. All rights reserved.</p>
-          <div className="flex space-x-6">
-            <Link href="#" className="text-gray-600 hover:text-gray-800 transition-colors">Privacy Policy</Link>
-            <Link href="#" className="text-gray-600 hover:text-gray-800 transition-colors">Terms of Service</Link>
-            <Link href="#" className="text-gray-600 hover:text-gray-800 transition-colors">Cookies</Link>
+        <div className="h-px w-full bg-[#5e788f]/50 mb-4 sm:mb-6" aria-label="Divider line"></div>
+        <div className="flex flex-col md:flex-row justify-between items-center text-[#25324B] text-sm sm:text-base gap-2 sm:gap-4">
+          <span className="text-center">© 2024 Alter Template</span>
+          <div className="flex flex-col md:flex-row md:gap-8 items-center text-center">
+            <span>Made by <a href="https://x.com/framebase_" target="_blank" rel="noopener" className="underline">Framebase</a></span>
+            <span>Built in <a href="https://framer.link/framebase" target="_blank" rel="noopener" className="underline">Framer</a></span>
           </div>
         </div>
       </div>

@@ -22,8 +22,8 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, del
       style={{ minHeight: '260px' }}
     >
       <div className="flex items-center mb-6">
-        <div className="bg-white rounded-xl shadow-md p-5 mr-4 flex items-center justify-center" style={{ boxShadow: '0 4px 16px 0 rgba(16,30,54,0.10)' }}>
-          <span className="text-[#8B5CF6] text-5xl">{icon}</span>
+        <div className="bg-white rounded-xl shadow-md p-3 mr-4 flex items-center justify-center" style={{ boxShadow: '0 4px 16px 0 rgba(16,30,54,0.10)' }}>
+          <span className="text-[#8B5CF6] text-3xl">{icon}</span>
         </div>
         <h3 className="text-2xl  text-gray-900" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>{title}</h3>
       </div>

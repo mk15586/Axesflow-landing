@@ -12,6 +12,7 @@ import {
 } from '@/components';
 import Insight from '@/components/insight';
 import { Qna } from '@/components/qna';
+import CtaSection from '@/components/CtaSection/CtaSection';
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         <Pricing />
         <Qna />
         {/* <Testimonials /> */}
+        <CtaSection />
       </main>
       <Footer />
     </div>

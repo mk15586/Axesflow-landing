@@ -1,68 +1,118 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const qnaData = [
-  {
-    question: 'What is Alter ?',
-    answer: 'Alter is a platform designed to simplify your workflow and boost productivity.'
-  },
-  {
-    question: 'Is Alter optimized for SEO ?',
-    answer: 'Yes, Alter is built with SEO best practices in mind to help your site rank better.'
-  },
-  {
-    question: 'Do I need coding skills to use Alter ?',
-    answer: 'No coding skills are required. Alter is user-friendly and easy to use for everyone.'
-  },
-  {
-    question: 'Can I customize Alter to fit my brand ?',
-    answer: 'Absolutely! Alter offers extensive customization options to match your brand.'
-  },
-  {
-    question: 'Does Alter include mobile responsiveness ?',
-    answer: 'Yes, Alter is fully responsive and works seamlessly on all devices.'
-  },
+	{
+		question: 'What is Alter ?',
+		answer: 'Alter is a platform designed to simplify your workflow and boost productivity.',
+	},
+	{
+		question: 'Is Alter optimized for SEO ?',
+		answer: 'Yes, Alter is built with SEO best practices in mind to help your site rank better.',
+	},
+	{
+		question: 'Do I need coding skills to use Alter ?',
+		answer: 'No coding skills are required. Alter is user-friendly and easy to use for everyone.',
+	},
+	{
+		question: 'Can I customize Alter to fit my brand ?',
+		answer: 'Absolutely! Alter offers extensive customization options to match your brand.',
+	},
+	{
+		question: 'Does Alter include mobile responsiveness ?',
+		answer: 'Yes, Alter is fully responsive and works seamlessly on all devices.',
+	},
 ];
 
 const Qna: React.FC = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+	const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  return (
-    <section className="w-full min-h-screen flex flex-col items-center justify-start bg-[#e6ebef] py-10 px-2">
-      <div className="w-full max-w-5xl bg-[#dbe2e7] rounded-3xl mx-auto flex flex-col items-center py-12 px-2 md:px-0 shadow-lg">
-        <div className="flex items-center gap-2 mb-4">
-          <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-white text-[#25324B] text-lg border border-gray-200">
-            <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16Zm-.75-4.25h1.5v1.5h-1.5v-1.5Zm2.25-5.5c0 1.1-.9 2-2 2a.75.75 0 0 0-.75.75v1h1.5v-.25a2.75 2.75 0 0 0 2.75-2.75c0-1.52-1.23-2.75-2.75-2.75s-2.75 1.23-2.75 2.75h1.5c0-.69.56-1.25 1.25-1.25s1.25.56 1.25 1.25Z" fill="#25324B"/></svg>
-          </span>
-          <span className="bg-white text-[#25324B] px-4 py-1 rounded-full text-base font-medium border border-gray-200">Your Queries, Simplified</span>
-        </div>
-        <h1 className="text-5xl font-light text-[#0e1c29] text-center mb-2" style={{fontFamily: 'Inter, sans-serif'}}>Questions? Answers!</h1>
-        <p className="text-lg text-[#25324B] opacity-80 text-center mb-8" style={{fontFamily: 'Inter, sans-serif'}}>Find quick answers to the most common questions about our platform</p>
-        <div className="w-full flex flex-col gap-4 mb-8">
-          {qnaData.map((item, idx) => (
-            <div key={idx} className="bg-white rounded-xl shadow-md overflow-hidden">
-              <button
-                className="w-full flex justify-between items-center px-6 py-4 text-lg font-medium text-[#25324B] focus:outline-none"
-                onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-                style={{fontFamily: 'Inter, sans-serif'}}
-              >
-                {item.question}
-                <svg width="24" height="24" fill="none" viewBox="0 0 24 24" className={`transition-transform duration-200 ${openIndex === idx ? 'rotate-180' : ''}`}><path d="M12 15.5a1 1 0 0 1-.7-.29l-4-4a1 1 0 1 1 1.4-1.42L12 13.09l3.3-3.3a1 1 0 1 1 1.4 1.42l-4 4a1 1 0 0 1-.7.29Z" fill="#25324B"/></svg>
-              </button>
-              {openIndex === idx && (
-                <div className="px-6 pb-4 text-[#25324B] text-base opacity-80" style={{fontFamily: 'Inter, sans-serif'}}>
-                  {item.answer}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-        <div className="flex items-center gap-2 mt-2 text-[#25324B] opacity-80" style={{fontFamily: 'Inter, sans-serif'}}>
-          <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M21 19v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2" stroke="#25324B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/><circle cx="12" cy="7" r="4" stroke="#25324B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          <span>Feel free to mail us for any enquiries : <span className="underline">alter@support.com</span></span>
-        </div>
-      </div>
-    </section>
-  );
+	return (
+		<section className="w-full min-h-screen flex flex-col items-center justify-start bg-[#e6ebef] py-6 sm:py-10 px-1 sm:px-2 font-['Inter',sans-serif]">
+			<div className="w-full max-w-6xl bg-[#dbe2e7] rounded-3xl mx-auto flex flex-col items-center py-6 sm:py-12 px-1 sm:px-4 md:px-8 shadow-lg font-['Inter',sans-serif]">
+				<div className="flex items-center gap-2 mb-4">
+					<span
+						className="relative flex items-center gap-2 px-3 sm:px-4 py-1 rounded-full text-sm sm:text-base font-medium border border-[#d8dfe5] bg-[rgba(241,242,251,0.9)]"
+						style={{
+							boxShadow: '0 0 0 2px rgba(241,242,251,0.9)',
+							borderStyle: 'solid',
+							borderWidth: '1px',
+							borderRadius: '60px',
+						}}
+					>
+						<img src="/icons/question.svg" alt="Question Icon" className="w-4 h-4 sm:w-5 sm:h-5 opacity-80" />
+						<span className="opacity-80 text-black">Your Queries, Simplified</span>
+					</span>
+				</div>
+				<motion.h1
+					initial={{ opacity: 0, y: 30 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.5, delay: 0 }}
+					className="text-2xl sm:text-4xl md:text-5xl font-normal text-[#0e1c29] text-center mb-2"
+				>
+					Questions? Answers!
+				</motion.h1>
+				<motion.p
+					initial={{ opacity: 0, y: 30 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.5, delay: 0.1 }}
+					className="text-sm sm:text-lg text-[#25324B] opacity-80 text-center mb-6 sm:mb-8"
+				>
+					Find quick answers to the most common questions about our platform
+				</motion.p>
+				<div className="w-full max-w-2xl flex flex-col gap-3 sm:gap-4 mb-6 sm:mb-8 font-['Inter',sans-serif]">
+					{qnaData.map((item, idx) => (
+						<motion.div
+							key={idx}
+							initial={{ opacity: 0, y: 30 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.5, delay: idx * 0.15 }}
+							className="rounded-xl shadow-md overflow-hidden"
+							style={{ background: '#F6FBFF' }}
+						>
+							<button
+								className="w-full flex justify-between items-center px-3 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium text-[#25324B] focus:outline-none font-['Inter',sans-serif]"
+								onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
+							>
+								{item.question}
+								<svg
+									width="24"
+									height="24"
+									fill="none"
+									viewBox="0 0 24 24"
+									className={`transition-transform duration-200 ${openIndex === idx ? 'rotate-180' : ''}`}
+								>
+									<path
+										d="M12 15.5a1 1 0 0 1-.7-.29l-4-4a1 1 0 1 1 1.4-1.42L12 13.09l3.3-3.3a1 1 0 1 1 1.4 1.42l-4 4a1 1 0 0 1-.7.29Z"
+										fill="#25324B"
+									/>
+								</svg>
+							</button>
+							<div
+								className={`transition-all duration-300 ease-in-out px-3 sm:px-6 overflow-hidden font-['Inter',sans-serif] ${openIndex === idx ? 'max-h-40 pb-2 sm:pb-3 opacity-100' : 'max-h-0 pb-0 opacity-0'}`}
+								style={{
+									transitionProperty: 'max-height, opacity, padding-bottom',
+								}}
+							>
+								{openIndex === idx && (
+									<div className="text-[#25324B] text-xs sm:text-sm opacity-80">
+										{item.answer}
+									</div>
+								)}
+							</div>
+						</motion.div>
+					))}
+				</div>
+				<div className="flex flex-wrap items-center gap-2 mt-2 text-[#25324B] opacity-80 font-['Inter',sans-serif] text-xs sm:text-base">
+					<img src="/icons/message.svg" alt="Message Icon" className="w-4 h-4 sm:w-5 sm:h-5" />
+					<span>
+						Feel free to mail us for any enquiries :{' '}
+						<span className="underline break-all">alter@support.com</span>
+					</span>
+				</div>
+			</div>
+		</section>
+	);
 };
 
 export default Qna;

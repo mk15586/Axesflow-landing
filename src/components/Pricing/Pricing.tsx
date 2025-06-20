@@ -60,7 +60,7 @@ const Pricing: React.FC = () => {
 	const [billing, setBilling] = useState<'monthly' | 'yearly'>('monthly');
 
 	return (
-		<section id="pricing" className="py-20">
+		<section id="pricing" className="py-10">
 			<div className="container mx-auto px-4">
 				<div className="flex justify-center mb-8">
 					<div
@@ -248,8 +248,9 @@ const Pricing: React.FC = () => {
 							transition={{ duration: 0.5, delay: index * 0.1 }}
 							className="bg-[#f6fbff] rounded-2xl shadow-xl p-6 flex flex-col border border-[#e5eaf3]"
 							style={{
-								boxShadow: 'rgba(16, 49, 77, 0.05) 0px 0.7px 0.7px -0.29px, rgba(16, 49, 77, 0.06) 0px 1.8px 1.8px -0.58px, rgba(16, 49, 77, 0.06) 0px 3.6px 3.6px -0.88px, rgba(16, 49, 77, 0.06) 0px 6.9px 6.9px -1.17px, rgba(16, 49, 77, 0.07) 0px 13.6px 13.6px -1.46px, rgba(16, 49, 77, 0.1) 0px 30px 30px -1.75px',
-								height: index === 0 ? 520 : index === 1 ? 570 : 610, // Give first card a little more height
+								boxShadow:
+									'rgba(16, 49, 77, 0.05) 0px 0.7px 0.7px -0.29px, rgba(16, 49, 77, 0.06) 0px 1.8px 1.8px -0.58px, rgba(16, 49, 77, 0.06) 0px 3.6px 3.6px -0.88px, rgba(16, 49, 77, 0.06) 0px 6.9px 6.9px -1.17px, rgba(16, 49, 77, 0.07) 0px 13.6px 13.6px -1.46px, rgba(16, 49, 77, 0.1) 0px 30px 30px -1.75px',
+								height: index === 0 ? 440 : index === 1 ? 480 : 520, // Decrease all card heights
 								width: '100%', // Let grid control the width
 								maxWidth: 400, // Prevent cards from being too wide
 								border: '2px solid #e5eaf3',
@@ -260,24 +261,32 @@ const Pricing: React.FC = () => {
 							}}
 						>
 							<div className="flex justify-between items-start">
-								<h3 className="text-xl text-[#0e1c29]" style={{ fontWeight: 500, fontFamily: 'Inter, sans-serif' }}>
+								<h3 className="text-xl text-[#0e1c29]" style={{ fontWeight: 500, fontFamily: 'Inter, sans-serif', marginRight: 4 }}>
 									{plan.name}
 								</h3>
 								{plan.tag && (
 									<div
-										className="bg-[#774be5] text-white px-5 py-2 rounded-full text-base flex items-center gap-2 shadow-sm"
+										className="bg-[#774be5] text-white px-2 py-1 rounded-full text-sm flex items-center gap-1 shadow-sm ml-1"
 										style={{
 											boxShadow: 'rgba(99, 69, 173, 0.5) 0px 1px 8px 0px',
-											fontWeight: 700,
+											fontWeight: 500,
 											letterSpacing: 0.5,
+											minWidth: 0,
+											width: 'auto',
+											paddingLeft: 10,
+											paddingRight: 10,
+											paddingTop: 5,
+											paddingBottom: 5,
+											fontSize: 15,
+											marginLeft: 4, // Reduce margin to bring closer
 										}}
 									>
 										<img
 											src="/icons/fire.svg"
 											alt="Popular"
-											width={22}
-											height={22}
-											style={{ marginRight: 6 }}
+											width={16}
+											height={16}
+											style={{ marginRight: 4 }}
 										/>
 										<span>{plan.tag}</span>
 									</div>
@@ -335,14 +344,14 @@ const Pricing: React.FC = () => {
 							<div className="border-t border-dotted border-[#5e788f80] border-opacity-50 my-4"></div>
 
 							<div className="flex-1">
-								<p className="text-[#0e1c29] font-medium mb-4">
+								<p className="text-[#0e1c29] font-medium mb-4" style={{ fontSize: 14, fontFamily: 'Inter, sans-serif' }}>
 									{plan.description}
 								</p>
 								<ul className="space-y-3">
 									{plan.features.map((feature, i) => (
 										<li key={i} className="flex items-start">
 											<FiCheck className="text-[#0e1c29] opacity-50 mt-0.5 mr-2 flex-shrink-0" />
-											<span className="text-[#0e1c29] opacity-80">
+											<span className="text-[#0e1c29] opacity-80" style={{ fontSize: 14, fontFamily: 'Inter, sans-serif' }}>
 												{feature}
 											</span>
 										</li>
