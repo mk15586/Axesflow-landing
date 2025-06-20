@@ -446,7 +446,7 @@ const Hero: React.FC = () => {
             <p className="text-gray-500 text-sm md:text-lg font-medium whitespace-nowrap">Adopted by renowned, trusted, and leading enterprises</p>
             <div className="hidden md:block flex-1 border-t-3 border-dotted border-gray-400 ml-4" style={{ opacity: 0.3 }} />
           </div>
-          <div className="flex flex-wrap justify-center gap-6 md:gap-12 lg:gap-20 items-center">
+          <div className="flex flex-wrap justify-center gap-3 md:gap-6 lg:gap-10 items-center">
             <div className="w-32 md:w-48 h-16 md:h-24 relative">
               <Image src="/asterisk.png" alt="Asterisk" fill className="object-contain grayscale opacity-80 hover:opacity-100 transition-opacity" />
             </div>
