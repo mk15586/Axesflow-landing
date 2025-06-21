@@ -131,10 +131,8 @@ const Hero: React.FC = () => {
             className="absolute left-1/2 -translate-x-1/2 -top-6 md:-top-8 z-10"
           >
             <div
-              className="rounded-[20px] flex items-center justify-center"
+              className="rounded-[20px] flex items-center justify-center w-16 h-16 md:w-20 md:h-20"
               style={{
-                width: 80,
-                height: 80,
                 boxShadow: '0 4px 24px 0 rgba(31, 38, 135, 0.10), 0 1.5px 0 0 #38a9ff',
                 border: '1.5px solid #e3f0fa',
                 background: 'linear-gradient(180deg, #f6fbff 80%, #eaf6ff 100%)',
@@ -143,7 +141,7 @@ const Hero: React.FC = () => {
               <img
                 src="/axesflow-logo-icon.png"
                 alt="AxesFlow Logo"
-                className="w-10 md:w-14"
+                className="w-8 md:w-14"
                 style={{ filter: 'drop-shadow(0 2px 6px rgba(139,92,246,0.10))' }}
               />
             </div>

@@ -97,30 +97,30 @@ const Features: React.FC = () => {
               />
             ))}
           </div>
-          <div className="w-full flex justify-center items-center gap-8 mt-12">
+          <div className="w-full flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 mt-12">
             <div className="flex items-center w-full max-w-xs">
-              <div className="flex-1 h-3 border-t-3 border-dotted border-gray-400 opacity-60"></div>
-              <div className="flex items-center gap-2 px-4">
-                <img src="/reshot-icon-handshake-FWPX82A9T3.svg" alt="Expert Collaboration" className="w-8 h-8" />
-                <span className="text-lg font-medium text-gray-800">Expert Collaboration</span>
+              <div className="flex-1 h-2 md:h-3 border-t-2 md:border-t-3 border-dotted border-gray-400 opacity-60"></div>
+              <div className="flex items-center gap-1 md:gap-2 px-2 md:px-4">
+                <img src="/reshot-icon-handshake-FWPX82A9T3.svg" alt="Expert Collaboration" className="w-6 h-6 md:w-8 md:h-8" />
+                <span className="text-base md:text-lg font-medium text-gray-800">Expert Collaboration</span>
               </div>
-              <div className="flex-1 h-3 border-t-3 border-dotted border-gray-400 opacity-60"></div>
+              <div className="flex-1 h-2 md:h-3 border-t-2 md:border-t-3 border-dotted border-gray-400 opacity-60"></div>
             </div>
             <div className="flex items-center w-full max-w-xs">
-              <div className="flex-1 h-3 border-t-3 border-dotted border-gray-400 opacity-60"></div>
-              <div className="flex items-center gap-2 px-4">
-                <img src="/plug.svg" alt="Seamless Integration" className="w-8 h-8" />
-                <span className="text-lg font-medium text-gray-800">Seamless Integration</span>
+              <div className="flex-1 h-2 md:h-3 border-t-2 md:border-t-3 border-dotted border-gray-400 opacity-60"></div>
+              <div className="flex items-center gap-1 md:gap-2 px-2 md:px-4">
+                <img src="/plug.svg" alt="Seamless Integration" className="w-6 h-6 md:w-8 md:h-8" />
+                <span className="text-base md:text-lg font-medium text-gray-800">Seamless Integration</span>
               </div>
-              <div className="flex-1 h-3 border-t-3 border-dotted border-gray-400 opacity-60"></div>
+              <div className="flex-1 h-2 md:h-3 border-t-2 md:border-t-3 border-dotted border-gray-400 opacity-60"></div>
             </div>
             <div className="flex items-center w-full max-w-xs">
-              <div className="flex-1 h-3 border-t-3 border-dotted border-gray-400 opacity-60"></div>
-              <div className="flex items-center gap-2 px-4">
-                <img src="/stat.svg" alt="Scalable Solutions" className="w-8 h-8" />
-                <span className="text-lg font-medium text-gray-800">Scalable Solutions</span>
+              <div className="flex-1 h-2 md:h-3 border-t-2 md:border-t-3 border-dotted border-gray-400 opacity-60"></div>
+              <div className="flex items-center gap-1 md:gap-2 px-2 md:px-4">
+                <img src="/stat.svg" alt="Scalable Solutions" className="w-6 h-6 md:w-8 md:h-8" />
+                <span className="text-base md:text-lg font-medium text-gray-800">Scalable Solutions</span>
               </div>
-              <div className="flex-1 h-3 border-t-3 border-dotted border-gray-400 opacity-60"></div>
+              <div className="flex-1 h-2 md:h-3 border-t-2 md:border-t-3 border-dotted border-gray-400 opacity-60"></div>
             </div>
           </div>
         </div>
