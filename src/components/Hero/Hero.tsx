@@ -364,7 +364,18 @@ const Hero: React.FC = () => {
                     {dealsData.map((deal, index) => (
                       <tr key={index} className="border-b last:border-b-0 hover:bg-gray-50 transition-colors">
                         <td className="py-2 px-3 md:py-3 md:px-4 flex items-center gap-2">
-                          <div className="bg-gray-200 border-2 border-dashed rounded-xl w-6 h-6 md:w-8 md:h-8" />
+                          {deal.product === 'Apple Watch' && (
+                            <img src="/icons/apple-watch.svg" alt="Apple Watch" className="bg-gray-200 border-2 border-dashed rounded-xl w-6 h-6 md:w-8 md:h-8" />
+                          )}
+                          {deal.product === 'MacBook Pro' && (
+                            <img src="/icons/macbook-removebg-preview.png" alt="MacBook Pro" className="bg-gray-200 border-2 border-dashed rounded-xl w-6 h-6 md:w-8 md:h-8 object-contain" />
+                          )}
+                          {deal.product === 'AirPods Pro' && (
+                            <img src="/icons/airpods.png" alt="AirPods Pro" className="bg-gray-200 border-2 border-dashed rounded-xl w-6 h-6 md:w-8 md:h-8 object-contain" />
+                          )}
+                          {deal.product !== 'Apple Watch' && deal.product !== 'MacBook Pro' && deal.product !== 'AirPods Pro' && (
+                            <div className="bg-gray-200 border-2 border-dashed rounded-xl w-6 h-6 md:w-8 md:h-8" />
+                          )}
                           <span className="font-medium text-[#23263b] text-sm md:text-base">{deal.product}</span>
                         </td>
                         <td className="py-2 px-3 md:py-3 md:px-4 text-[#23263b] text-sm md:text-base">{deal.location}</td>
