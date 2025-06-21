@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useLayoutEffect } from 'react';
 import Link from 'next/link';
 
 const navLinks = [
@@ -12,15 +12,49 @@ const navLinks = [
 
 const Header: React.FC = () => {
   const [isHeadbarOpen, setIsHeadbarOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false); // NEW: track mount
   const scrollYRef = useRef(0);
   const animationRef = useRef<number | null>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    setIsMounted(true); // Enable transition after mount
+  }, []);
+
+  // Use useLayoutEffect for instant style application before paint
+  useLayoutEffect(() => {
+    scrollYRef.current = window.scrollY;
+    if (headerRef.current) {
+      const y = scrollYRef.current;
+      const progress = Math.min(Math.max((y - 100) / 100, 0), 1);
+      const width = 110 - 15 * progress;
+      const borderRadius = 2.5 - 1.25 * progress;
+      const bgOpacity = progress * 0.8;
+      const maxWidth = 1200 - 300 * progress;
+      headerRef.current.style.transition = 'none';
+      headerRef.current.style.width = `${width}vw`;
+      headerRef.current.style.borderRadius = `${borderRadius}rem`;
+      headerRef.current.style.backgroundColor = `rgba(255,255,255,${bgOpacity})`;
+      headerRef.current.style.maxWidth = `${maxWidth}px`;
+      headerRef.current.style.boxShadow = progress > 0 ? '0 4px 30px rgba(0, 0, 0, 0.1)' : 'none';
+      // Force reflow to apply styles instantly
+      void headerRef.current.offsetHeight;
+    }
+  }, []);
+
+  useEffect(() => {
+    // Enable transition after first paint
+    if (headerRef.current) {
+      setTimeout(() => {
+        if (headerRef.current) {
+          headerRef.current.style.transition = '';
+        }
+      }, 0);
+    }
+
     const updateShrinkProgress = () => {
       const y = scrollYRef.current;
-      // Start animation 100px earlier (at y = 100)
       const progress = Math.min(Math.max((y - 100) / 100, 0), 1);
       if (headerRef.current) {
         const width = 110 - 15 * progress;
@@ -39,23 +73,6 @@ const Header: React.FC = () => {
     const handleScroll = () => {
       scrollYRef.current = window.scrollY;
     };
-
-    // --- Fix: Initialize header style immediately on mount ---
-    scrollYRef.current = window.scrollY;
-    if (headerRef.current) {
-      const y = scrollYRef.current;
-      const progress = Math.min(Math.max((y - 100) / 100, 0), 1);
-      const width = 110 - 15 * progress;
-      const borderRadius = 2.5 - 1.25 * progress;
-      const bgOpacity = progress * 0.8;
-      const maxWidth = 1200 - 300 * progress;
-      headerRef.current.style.width = `${width}vw`;
-      headerRef.current.style.borderRadius = `${borderRadius}rem`;
-      headerRef.current.style.backgroundColor = `rgba(255,255,255,${bgOpacity})`;
-      headerRef.current.style.maxWidth = `${maxWidth}px`;
-      headerRef.current.style.boxShadow = progress > 0 ? '0 4px 30px rgba(0, 0, 0, 0.1)' : 'none';
-    }
-    // --- End fix ---
 
     animationRef.current = requestAnimationFrame(updateShrinkProgress);
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -95,10 +112,16 @@ const Header: React.FC = () => {
       {/* Desktop & Tablet Header (hidden on mobile) */}
       <div
         ref={headerRef}
-        className="hidden md:block fixed top-2 left-1/2 -translate-x-1/2 z-50 backdrop-blur-lg transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]"
+        className={`hidden md:block fixed top-2 left-1/2 -translate-x-1/2 z-50 backdrop-blur-lg duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]${isMounted ? ' transition-all' : ''}`}
         style={{
           transformOrigin: 'center',
           willChange: 'width, borderRadius, background-color, box-shadow',
+          transition: isMounted ? 'all 0.3s cubic-bezier(0.4,0,0.2,1)' : 'none', // Only transition after mount
+          width: '110vw', // Default unshrunk
+          borderRadius: '2.5rem',
+          backgroundColor: 'rgba(255,255,255,0)',
+          maxWidth: '1200px',
+          boxShadow: 'none',
         }}
       >
         <div className="px-6 py-0 h-15 flex items-center relative">

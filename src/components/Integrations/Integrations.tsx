@@ -25,15 +25,35 @@ const Integrations: React.FC = () => {
         <div className="flex justify-center">
           <SocialLinksDiagram />
         </div>
-        <div className="flex flex-col md:flex-row justify-center gap-6 mt-10">
-          <div className="flex items-center gap-3 border border-[#D8DFE5] rounded-xl px-6 py-4 min-w-[120px] bg-transparent">
-            <Image src="/seamless-automation.png" alt="Seamless Automation" width={250} height={250} />
+        <div className="flex flex-col md:flex-row justify-center items-center gap-0 md:gap-8 mt-10 w-full">
+          {/* Label 1 */}
+          <div className="flex flex-row items-center gap-2 px-3 py-1.5">
+            <span className="block w-7 h-7 md:w-8 md:h-8">
+              <img src="/icons/automate.svg" alt="Seamless Automation" className="w-full h-full object-contain" />
+            </span>
+            <span className="text-base md:text-lg text-[#23263b] font-normal">Seamless Automation</span>
           </div>
-          <div className="flex items-center gap-3 border border-[#D8DFE5] rounded-xl px-6 py-4 min-w-[120px] bg-transparent">
-            <Image src="/data-sync.png" alt="Real-Time Data Sync" width={200} height={200} />
+          {/* Vertical separator */}
+          <div className="hidden md:block h-8 border-r border-dashed border-[#bfc9d1] mx-3" style={{ opacity: 0.5 }} />
+          {/* Mobile separator */}
+          <div className="block md:hidden w-full h-px border-t border-dashed border-[#bfc9d1] my-1.5" style={{ opacity: 0.5 }} />
+          {/* Label 2 */}
+          <div className="flex flex-row items-center gap-2 px-3 py-1.5">
+            <span className="block w-7 h-7 md:w-8 md:h-8">
+              <img src="/icons/real-time.svg" alt="Real-Time Data Sync" className="w-full h-full object-contain" />
+            </span>
+            <span className="text-base md:text-lg text-[#23263b] font-normal">Real-Time Data Sync</span>
           </div>
-          <div className="flex items-center gap-3 border border-[#D8DFE5] rounded-xl px-6 py-4 min-w-[120px] bg-transparent ">
-            <Image src="/customize-solution.png" alt="Customizable Solutions" width={250} height={250} />
+          {/* Vertical separator */}
+          <div className="hidden md:block h-8 border-r border-dashed border-[#bfc9d1] mx-3" style={{ opacity: 0.5 }} />
+          {/* Mobile separator */}
+          <div className="block md:hidden w-full h-px border-t border-dashed border-[#bfc9d1] my-1.5" style={{ opacity: 0.5 }} />
+          {/* Label 3 */}
+          <div className="flex flex-row items-center gap-2 px-3 py-1.5">
+            <span className="block w-7 h-7 md:w-8 md:h-8">
+              <img src="/icons/customize.svg" alt="Customizable Solutions" className="w-full h-full object-contain" />
+            </span>
+            <span className="text-base md:text-lg text-[#23263b] font-normal">Customizable Solutions</span>
           </div>
         </div>
       </div>

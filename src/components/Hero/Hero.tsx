@@ -113,7 +113,10 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="pt-32 md:pt-44 pb-12 md:pb-20 px-4 md:px-6 lg:px-8">
+    <section 
+      className="pt-32 md:pt-44 pb-12 md:pb-20 px-4 md:px-6 lg:px-8 overflow-x-hidden" 
+      style={{ maxWidth: '100vw', overflowX: 'hidden' }}
+    >
       <div className="container mx-auto max-w-6xl">
         {/* Hero Section */}
         <motion.div 
@@ -157,7 +160,7 @@ const Hero: React.FC = () => {
             <span className="block">
               <span className="inline">Automate.</span>
               <span className="inline ml-2">Engage.</span>
-              <span className="inline ml-2">Convert.</span>
+              <span className="block sm:inline ml-0 sm:ml-2">Convert.</span>
             </span>
             <span className="block text-gray-800">Powered by AI.</span>
           </motion.h1>
