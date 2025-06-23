@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import NotFound from "./not-found";
 
-export default function GlobalError({ error, reset }: { error: Error; reset: () => void }) {
+export default function GlobalError({ error }: { error: Error }) {
   // Optionally, you can log the error or send to analytics here
   useEffect(() => {
     // Log error if needed
