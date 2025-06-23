@@ -4,9 +4,9 @@ import React, { useEffect, useRef, useState, useLayoutEffect } from 'react';
 import Link from 'next/link';
 
 const navLinks = [
-  { href: '#features', label: 'Features' },
-  { href: '#pricing', label: 'Pricing' },
-  { href: '#changelog', label: 'Changelog' },
+  { href: '/#features', label: 'Features' },
+  { href: '/#pricing', label: 'Pricing' },
+  { href: '/changelog', label: 'Changelog' }, // changed to redirect to /changelog
   { href: '/contacts', label: 'Contact' }, // updated to redirect to contacts page
 ];
 

@@ -37,10 +37,8 @@ const Footer: React.FC = () => {
         </div>
         <div className="h-px w-full bg-[#5e788f]/50 mb-4 sm:mb-6" aria-label="Divider line"></div>
         <div className="flex flex-col md:flex-row justify-between items-center text-[#25324B] text-sm sm:text-base gap-2 sm:gap-4">
-          <span className="text-center">© 2024 Alter Template</span>
+          <span className="text-center">© 2024 Axesflow</span>
           <div className="flex flex-col md:flex-row md:gap-8 items-center text-center">
-            <span>Made by <a href="https://x.com/framebase_" target="_blank" rel="noopener" className="underline">Framebase</a></span>
-            <span>Built in <a href="https://framer.link/framebase" target="_blank" rel="noopener" className="underline">Framer</a></span>
           </div>
         </div>
       </div>
