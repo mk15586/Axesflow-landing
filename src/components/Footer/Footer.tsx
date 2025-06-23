@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { FiTwitter, FiInstagram, FiLinkedin } from 'react-icons/fi';
+import Image from 'next/image';
 
 const Footer: React.FC = () => {
   return (
@@ -10,7 +11,7 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-3 sm:px-6">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8 gap-6 sm:gap-8">
           <div className="flex flex-col gap-3 sm:gap-4 items-center md:items-start">
-            <img src="/logo.png" alt="Alter Logo" className="h-12 sm:h-16 w-auto" />
+            <Image src="/logo.png" alt="Alter Logo" width={120} height={64} className="h-12 sm:h-16 w-auto" />
           </div>
           <nav className="flex flex-wrap justify-center gap-4 sm:gap-8 text-base sm:text-lg font-normal text-[#5a6473]">
             <Link href="#features" className="hover:text-[#25324B] transition-colors opacity-70">Features</Link>
