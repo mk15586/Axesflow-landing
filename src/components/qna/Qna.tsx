@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
@@ -28,7 +30,7 @@ const Qna: React.FC = () => {
 	const [openIndex, setOpenIndex] = useState<number | null>(null);
 
 	return (
-		<section className="w-full min-h-screen flex flex-col items-center justify-start bg-[#e6ebef] py-6 sm:py-10 px-1 sm:px-2 font-['Inter',sans-serif]">
+		<section className="w-full min-h-screen flex flex-col items-center justify-start py-16 sm:py-20 px-1 sm:px-2 font-['Inter',sans-serif]">
 			<div className="w-full max-w-6xl bg-[#dbe2e7] rounded-3xl mx-auto flex flex-col items-center py-6 sm:py-12 px-1 sm:px-4 md:px-8 shadow-lg font-['Inter',sans-serif]">
 				<div className="flex items-center gap-2 mb-4">
 					<span

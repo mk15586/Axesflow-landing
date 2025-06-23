@@ -7,7 +7,7 @@ const navLinks = [
   { href: '#features', label: 'Features' },
   { href: '#pricing', label: 'Pricing' },
   { href: '#changelog', label: 'Changelog' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/contacts', label: 'Contact' }, // updated to redirect to contacts page
 ];
 
 const Header: React.FC = () => {
