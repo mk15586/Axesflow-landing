@@ -53,7 +53,6 @@ export default function ContactsPage() {
 	return (
 		<div
 			className="min-h-screen w-full relative flex flex-col items-center justify-center py-16 px-4"
-			style={{ backgroundColor: '#e3e6e4' }}
 		>
 			<Header />
 			<div className="flex-1 flex flex-col justify-start max-w-2xl w-full mx-auto text-center mb-10" style={{ minHeight: '40vh', paddingTop: '12vh' }}>
