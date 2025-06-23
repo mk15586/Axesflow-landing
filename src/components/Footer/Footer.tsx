@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
           </div>
           <nav className="flex flex-wrap justify-center gap-4 sm:gap-8 text-base sm:text-lg font-normal text-[#5a6473]">
             <Link href="#features" className="hover:text-[#25324B] transition-colors opacity-70">Features</Link>
-            <Link href="/changelog" className="hover:text-[#25324B] transition-colors opacity-70">Changelog</Link>
+            
             <Link href="#pricing" className="hover:text-[#25324B] transition-colors opacity-70">Pricing</Link>
             <Link href="/contact" className="hover:text-[#25324B] transition-colors opacity-70">Contact</Link>
           </nav>
