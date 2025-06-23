@@ -1,29 +1,69 @@
 import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const CtaSection: React.FC = () => {
   return (
     <section id="insights" className="w-full flex flex-col lg:flex-row items-center justify-between bg-[#D8DFE5] rounded-3xl px-4 sm:px-8 py-8 sm:py-14 max-w-[1150px] mx-auto mt-8 mb-8 gap-8">
       {/* Left Side */}
-      <div className="flex-1 flex flex-col items-start justify-center max-w-xl w-full min-w-0">
+      <motion.div
+        className="flex-1 flex flex-col items-start justify-center max-w-xl w-full min-w-0"
+        initial={{ opacity: 0, x: -60 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.6 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+      >
         {/* Badge */}
-        <div className="flex items-center gap-2 px-4 py-1 mb-6 rounded-full border border-[#d8dfe5] bg-[rgba(241,242,251,0.9)] shadow-[0_0_0_2px_rgba(241,242,251,0.9)]" style={{ borderRadius: 60 }}>
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.6 }}
+          transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
+          className="flex items-center gap-2 px-4 py-1 mb-6 rounded-full border border-[#d8dfe5] bg-[rgba(241,242,251,0.9)] shadow-[0_0_0_2px_rgba(241,242,251,0.9)]"
+          style={{ borderRadius: 60 }}
+        >
           <Image src="/icons/people.svg" alt="People Icon" width={22} height={22} className="opacity-80 text-[#16101e]" />
           <span className="text-sm font-medium opacity-80 text-[#16101e]">Trusted by 10k + businesses</span>
-        </div>
+        </motion.div>
         {/* Heading */}
-        <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-light text-[#232b3b] mb-4 leading-tight text-left font-['Plus Jakarta Sans',sans-serif] break-words">
-          Build <span className="inline-block">AI-Powered</span> <span className="inline-block">Marketing</span> <span className="inline-block">Now!</span>
-        </h2>
+        <motion.h2
+          className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-light text-[#232b3b] mb-4 leading-tight text-left font-['Plus Jakarta Sans',sans-serif] break-words"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+        >
+          {['Build ', 'AI-Powered ', 'Marketing ', 'Now!'].map((word, i) => (
+            <motion.span
+              key={i}
+              style={{ display: 'inline-block', willChange: 'transform' }}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.6 }}
+              transition={{ duration: 0.5, delay: 0.3 + i * 0.08, ease: 'easeOut' }}
+            >
+              {word}
+            </motion.span>
+          ))}
+        </motion.h2>
         {/* Subheading */}
-        <p className="text-base xs:text-lg sm:text-xl text-[#232b3b] opacity-80 mb-8 text-left max-w-xl break-words">
+        <motion.p
+          className="text-base xs:text-lg sm:text-xl text-[#232b3b] opacity-80 mb-8 text-left max-w-xl break-words"
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.6 }}
+          transition={{ duration: 0.7, delay: 0.6, ease: 'easeOut' }}
+        >
           Automate lead generation and customer engagement in diverse and dynamic real-world settings
-        </p>
+        </motion.p>
         {/* CTA Buttons */}
-        <div className="flex flex-row gap-6 w-full max-w-md mt-2
-          sm:flex-row sm:gap-6
-          flex-wrap
-          ">
+        <motion.div
+          className="flex flex-row gap-6 w-full max-w-md mt-2 sm:flex-row sm:gap-6 flex-wrap"
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.6 }}
+          transition={{ duration: 0.7, delay: 0.7, ease: 'easeOut' }}
+        >
           <a
             href="https://framer.link/Vu5MARe"
             target="_blank"
@@ -58,15 +98,27 @@ const CtaSection: React.FC = () => {
               <g><path d="M140,180a12,12,0,1,1-12-12A12,12,0,0,1,140,180ZM128,72c-22.06,0-40,16.15-40,36v4a8,8,0,0,0,16,0v-4c0-11,10.77-20,24-20s24,9,24,20-10.77,20-24,20a8,8,0,0,0-8,8v8a8,8,0,0,0,16,0v-.72c18.24-3.35,32-17.9,32-35.28C168,88.15,150.06,72,128,72Zm104,56A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"></path></g>
             </svg>
           </a>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
       {/* Right Side */}
-      <div className="flex-1 flex items-center justify-center w-full max-w-xl min-w-0 mt-8 lg:mt-0">
+      <motion.div
+        className="flex-1 flex items-center justify-center w-full max-w-xl min-w-0 mt-8 lg:mt-0"
+        initial={{ opacity: 0, x: -80 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.6 }}
+        transition={{ duration: 0.9, delay: 0.2, ease: 'easeOut' }}
+      >
         {/* Replace with your own image or chart */}
-        <div className="w-full max-w-lg bg-white rounded-2xl shadow-2xl p-2 sm:p-4 flex items-center justify-center">
+        <motion.div
+          className="w-full max-w-lg bg-white rounded-2xl shadow-2xl p-2 sm:p-4 flex items-center justify-center"
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.6 }}
+          transition={{ duration: 0.9, delay: 0.3, ease: 'easeOut' }}
+        >
           <Image src="/charts/real-time-insight.png" alt="Widget" width={480} height={240} className="rounded-xl object-cover w-full h-auto" />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

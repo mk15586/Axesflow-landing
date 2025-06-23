@@ -66,9 +66,10 @@ const Qna: React.FC = () => {
 					{qnaData.map((item, idx) => (
 						<motion.div
 							key={idx}
-							initial={{ opacity: 0, y: 30 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.5, delay: idx * 0.15 }}
+							initial={{ opacity: 0, y: 40 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true, amount: 0.6 }}
+							transition={{ duration: 0.5, delay: idx * 0.15, ease: 'easeOut' }}
 							className="rounded-xl shadow-md overflow-hidden"
 							style={{ background: '#F6FBFF' }}
 						>
@@ -97,9 +98,14 @@ const Qna: React.FC = () => {
 								}}
 							>
 								{openIndex === idx && (
-									<div className="text-[#25324B] text-xs sm:text-sm opacity-80">
+									<motion.div
+										initial={{ opacity: 0, filter: 'blur(8px)' }}
+										animate={{ opacity: 1, filter: 'blur(0px)' }}
+										transition={{ duration: 0.4, ease: 'easeOut' }}
+										className="text-[#25324B] text-xs sm:text-sm opacity-80"
+									>
 										{item.answer}
-									</div>
+									</motion.div>
 								)}
 							</div>
 						</motion.div>
