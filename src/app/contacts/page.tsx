@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Header from '../../components/Header/Header';
 import Qna from '../../components/qna/Qna';
 import Footer from '../../components/Footer/Footer';
@@ -73,7 +74,7 @@ export default function ContactsPage() {
 						}}
 					>
 						<div style={{ opacity: 0.8, display: 'flex', alignItems: 'center' }}>
-							<img src="/icons/phone.svg" alt="Phone" width={20} height={20} style={{ display: 'inline-block', flexShrink: 0 }} />
+							<Image src="/icons/phone.svg" alt="Phone" width={20} height={20} style={{ display: 'inline-block', flexShrink: 0 }} />
 						</div>
 						<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', flexShrink: 0 }}>
 							<p className="font-semibold text-sm text-[#23263b]" style={{ margin: 0 }}>Contact</p>
