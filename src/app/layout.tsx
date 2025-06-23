@@ -40,7 +40,7 @@ export default function RootLayout({
             left: 0,
             width: "100vw",
             height: "100vh",
-  
+            backgroundImage: "url('/icons/cloudy.png')", // Replace with your image path
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
